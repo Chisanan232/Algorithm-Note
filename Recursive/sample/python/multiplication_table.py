@@ -8,21 +8,25 @@ Below is a example to let everyone deeply understand how powerful recursive is!
 You'll found that the time complexity sharply decrease to O(1) from O(N^2).
 """
 
-
-def do_multiplication_process(multiplier, multiplicand):
-    if 1 <= multiplicand <= 9:
-        print(f"{multiplier} * {multiplicand} = {multiplier * multiplicand}")
-        do_multiplication_process(multiplier, multiplicand + 1)
-    else:
-        if multiplier == 9:
-            print("Finish multiplication table!")
-            return True
-        else:
-            do_multiplication_process(multiplier + 1, 1)
+Start_Number = 1
+Multiplier_End_Number = 9
+Multiplicand_End_Number = 9
 
 
 def get_multiplication_table():
-    do_multiplication_process(1, 1)
+    do_multiplication_process(Start_Number, Start_Number)
+
+
+def do_multiplication_process(multiplier, multiplicand):
+    if Start_Number <= multiplicand <= Multiplicand_End_Number:
+        print(f"{multiplier} * {multiplicand} = {multiplier * multiplicand}")
+        do_multiplication_process(multiplier, multiplicand + 1)
+    else:
+        if multiplier == Multiplier_End_Number:
+            print("Finish multiplication table by Python 3!")
+            return True
+        else:
+            do_multiplication_process(multiplier + 1, Start_Number)
 
 
 if __name__ == '__main__':
