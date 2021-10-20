@@ -153,10 +153,6 @@ int main(int argc, const char * argv[]) {
     // Start to run 8 Queen question.
     QueenPuzzle queen;
     queen.placeQueen(0);
-//    for (int i=0; i<10; i++) {
-//        queen.placeQueen(i);
-//        cout << "Total has " << sum << " solutions" << endl;
-//    }
     
     return 0;
 }
